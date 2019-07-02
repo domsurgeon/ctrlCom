@@ -4,10 +4,6 @@ import { productsActions } from '../actions'
 import { miliToSt, valToDate, percent } from '../helpers'
 
 class FilterData extends Component {
-  constructor ( props ){
-    super( props )
-  }
-
   render() {
     const catSum = this.props.categories.reduce( (s,i) => s+i.spent, 0 )
     let { ini, end } = this.props.dates

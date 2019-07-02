@@ -1,13 +1,23 @@
+DOSKEY chm=git checkout master
+DOSKEY pl=git pull
+DOSKEY ps=git push
+DOSKEY s=git status
+DOSKEY st=git stash
+DOSKEY ap=git stash apply
+DOSKEY co=git commit -m\"amend\"
+DOSKEY ad=git add -u
+DOSKEY br=git branch
+DOSKEY d=yarn start
+DOSKEY p=yarn build
+DOSKEY w=cd c:/ctrlcom
+w
+d
+
 cd c:/caco/node
 node server
 
-cd c:/caco
-yarn start
-
-
 
 Next:
-- date, formatted on graph list (papa( 3/11/19 ))
+- delete product by date
 - textarea DB
 - save DB
-- delete product by date

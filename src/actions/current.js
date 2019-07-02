@@ -109,6 +109,10 @@ function saveError( error ) {
 function saveAPI ( product ) {
   product = { ...product, date: new Date() * 1 }
   if( LS ){
+    const data = JSON.parse( localStorage.getItem('products') || "[]" )
+    data.push( product )
+    localStorage.setItem('products', JSON.stringify( data ))
+    return new Promise( (r,x) => r({ data }) )
   }else{
     const ApiEndpoint = `${ api }/save`
 
@@ -132,13 +136,7 @@ function saveAPI ( product ) {
     .then( responseJson => {
       return { data: responseJson }
     }).catch( error => {
-
-
-      const data = JSON.parse( localStorage.getItem('products') || "[]" )
-      data.push( product )
-      localStorage.setItem('products', JSON.stringify( data ))
-      return new Promise( (r,x) => r({ data }) )
-      //return { error }
+      return { error }
     })
   }
 }

@@ -70,6 +70,8 @@ function getProductsError( error ) {
 
 function getProductsFromAPI () {
   if( LS ){
+    const data = JSON.parse( localStorage.getItem('products') || "[]" )
+    return new Promise( (r,x) => r({ data }) )
   }else{
     const ApiEndpoint = `${ api }/getProducts/`
 
@@ -82,10 +84,7 @@ function getProductsFromAPI () {
     .then( responseJson => {
       return { data: responseJson }
     }).catch( error => {
-      
-      const data = JSON.parse( localStorage.getItem('products') || "[]" )
-      return new Promise( (r,x) => r({ data }) )
-      //return { error }
+      return { error }
     })
   }
 }
