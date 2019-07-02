@@ -1,0 +1,5 @@
+export const SET_DATES = 'products:setDates'
+export const SET_CATEGORIES = 'products:setCategories'
+export const GET_PRODUCTS = 'products:getProducts'
+export const GET_PRODUCTS_SUCCESS = 'products:getProductsSuccess'
+export const GET_PRODUCTS_ERROR = 'products:getProductsError'

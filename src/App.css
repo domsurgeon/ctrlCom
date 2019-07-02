@@ -2,28 +2,98 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+input{
+	display: block;
+	margin: 0 auto 10px;
+	text-align: center;
+}
+p{
+	margin: 0
+}
+ul{
+	overflow: visible;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	list-style-type: none;
+}
+.catname{
+	font-size: 16px;
+	margin: 0;
+	float: left;
+	text-transform: capitalize;
+}
+ul button{
+	width: 100%;
+	padding: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+label{
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button{
+	cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+label span{
+	display: block;
+	margin: 0 0 5px;
+}
+
+section{
+	border-top: 1px solid #ccc;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+.catlist{
+	text-align: left;
+	width: 400px;
+	margin: 25px auto;
+}
+.catlist li,
+.catlist p{
+	clear: both;
+	margin-bottom: 5px;
+}
+.catlist ul{
+	clear: both;
+	padding-left: 25px;
+	color: #ccc;
+}
+.catlist span{
+	text-transform: capitalize;
+}
+.perc{
+	margin-left: 10px;
+	width: 60px;
+	border-left: 1px solid #ccc;
+	font-weight: 700;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+.price, .perc{
+	text-align: right;
+	float: right;
+}
+.pdate{
+	float: right
+}
+.graphdata-input{
+	margin-bottom: 50px;
+}
+
+.draw-dom{
+	margin: 25px 0
+}
+
+h2{
+	text-align: center;
+}
+
+@keyframes bg-spin {
   from {
     transform: rotate(0deg);
   }

@@ -1,0 +1,13 @@
+cd c:/caco/node
+node server
+
+cd c:/caco
+yarn start
+
+
+
+Next:
+- date, formatted on graph list (papa( 3/11/19 ))
+- textarea DB
+- save DB
+- delete product by date

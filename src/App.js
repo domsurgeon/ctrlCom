@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { currentActions } from './actions'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ProductInput from './components/ProductInput'
+import CategoryInput from './components/CategoryInput'
+import PriceInput from './components/PriceInput'
+import FilterData from './components/FilterData'
+//import QuantityInput from './components/QuantityInput'
+//import UnityInput from './components/UnityInput'
+
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <h1>CtrlCom</h1>
+        <section>
+          <ProductInput />
+          <CategoryInput />
+          <PriceInput />
+          <button onClick={ this.props.save } >Done</button>
+        </section>
+        <FilterData />
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => state
+const mapActionsToProps = dispatch => ({
+  save: () => dispatch( currentActions.save() )
+})
+
+export default connect( mapStateToProps, mapActionsToProps )( App )
