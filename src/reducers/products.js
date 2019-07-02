@@ -5,14 +5,12 @@ import {
   SET_CATEGORIES,
   SET_DATES
 } from '../types'
-import { miliToSt,valToDate } from '../helpers'
+import { ini, end } from '../helpers'
 
-const monthAgo = new Date()
-monthAgo.setMonth(monthAgo.getMonth() - 1)
 const INITIAL_STATE = {
   dates: {
-    ini: monthAgo * 1,
-    end: valToDate( miliToSt(new Date() * 1), 'end' ).end
+    ini,
+    end
   },
   categories: [],
   listAll: [],

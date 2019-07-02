@@ -38,3 +38,11 @@ export const catsFromProds = products => {
 
     return categories
 }
+
+export const ini = ( () => {
+  const monthAgo = new Date()
+  monthAgo.setMonth(monthAgo.getMonth() - 1)
+  return monthAgo * 1
+} )()
+
+export const end = ( () => valToDate( miliToSt(new Date() * 1), 'end' ).end )()

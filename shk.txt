@@ -13,7 +13,7 @@ DOSKEY w=cd c:/ctrlcom
 w
 d
 
-cd c:/caco/node
+cd c:/ctrlcom/node
 node server
 
 
