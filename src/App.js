@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { currentActions } from './actions'
+import { productsActions, currentActions } from './actions'
 import './App.css'
 
 import ProductInput from './components/ProductInput'
@@ -11,6 +11,10 @@ import FilterData from './components/FilterData'
 //import UnityInput from './components/UnityInput'
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getProducts()
+  }
+
   render(){
     return (
       <div className="App">
@@ -29,6 +33,7 @@ class App extends Component {
 
 const mapStateToProps = state => state
 const mapActionsToProps = dispatch => ({
+  getProducts: () => dispatch( productsActions.getProducts() ),
   save: () => dispatch( currentActions.save() )
 })
 

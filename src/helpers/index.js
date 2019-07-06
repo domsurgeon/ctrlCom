@@ -31,6 +31,7 @@ export const catsFromProds = products => {
         const filtered = products.filter( prod => prod.category === cat.name )
         cat.spent = filtered.reduce(( sum, prod ) => sum + prod.price ,0)
         cat.subitems = filtered
+        cat.date = cat.subitems[0].date
         cats.push( cat )
       }
       return cats

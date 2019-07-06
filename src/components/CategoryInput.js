@@ -4,22 +4,21 @@ import { connect } from 'react-redux'
 import { currentActions } from '../actions'
 
 class CategoryInput extends Component {
-  constructor ( props ){
-    super( props )
-    this.setCategory = this.setCategory.bind(this)
-  }
-
-  setCategory( category ) {
-    this.props.setCategory( category )
-  }
 
   render() {
+    const { categories, current, setCategory, error } = this.props
+
     return (
       <div className="category-input">
         <label>
-          <Autocomplete items={ this.props.categories } placeholder="Enter category" current={ this.props.current } setItem={ this.setCategory } />
+          <Autocomplete 
+            items = { categories } 
+            placeholder = "Enter category" 
+            current = { current } 
+            setItem = { setCategory }
+          />
         </label>
-        <p>{ this.props.error }</p>
+        <p>{ error }</p>
       </div>
     )
   }

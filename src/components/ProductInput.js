@@ -1,29 +1,24 @@
 import React, { Component } from 'react'
 import Autocomplete from './Autocomplete'
 import { connect } from 'react-redux'
-import { productsActions, currentActions } from '../actions'
+import { currentActions } from '../actions'
 
 class ProductInput extends Component {
-  constructor ( props ){
-    super( props )
-    this.setProduct = this.setProduct.bind(this)
-  }
-
-  setProduct( name ) {
-    this.props.setProduct( name )
-  }
-
-  componentDidMount() {
-    this.props.getProducts()
-  }
-
   render() {
+    const { products, current, setProduct, error } = this.props
+
     return (
       <div className="product-input">
         <label>
-          <Autocomplete items={ this.props.products } placeholder="Enter product" current={ this.props.current } focus={ true } setItem={ this.setProduct } />
+          <Autocomplete 
+            items = { products }
+            placeholder = "Enter product"
+            current = { current }
+            focus = { true }
+            setItem = { setProduct } 
+          />
         </label>
-        <p>{ this.props.error }</p>
+        <p>{ error }</p>
       </div>
     )
   }
@@ -35,7 +30,6 @@ const mapStateToProps = state => ({
 })
 
 const mapActionsToProps = dispatch => ({
-  getProducts: () => dispatch( productsActions.getProducts() ),
   setProduct: name => dispatch( currentActions.setProduct( name ) )
 })
 

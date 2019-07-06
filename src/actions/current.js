@@ -14,7 +14,7 @@ import { getProducts } from './products'
 
 export function setProduct( name ) {
   return ( dispatch, getState ) => {
-    let product = getState().products.listAll.filter( prod => prod.name === name )[0]
+    let product = getState().products.listAll.find( prod => prod.name === name )
 
     if( !product ){
       dispatch({
