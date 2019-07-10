@@ -13,6 +13,7 @@ import FilterData from './components/FilterData'
 class App extends Component {
   componentDidMount() {
     this.props.getProducts()
+    document.title = 'Control money spending'
   }
 
   render(){
