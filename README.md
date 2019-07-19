@@ -8,5 +8,5 @@ yarn start
 
 or:
 npm install
-npm react-scripts start
+npm start
 
